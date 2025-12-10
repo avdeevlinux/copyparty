@@ -21,10 +21,4 @@ RUN pip install --no-cache-dir --user .
 EXPOSE 3923
 
 # Run copyparty
-ENTRYPOINT [
-  "python","-m","copyparty",
-  "-a","admin:adminpass",
-  "-a","guest:guestpass",
-  "-v","/data::r,guest:rwmda,admin",
-  "--http=0.0.0.0:3923"
-]
+ENTRYPOINT ["python","-m","copyparty","-a","admin:adminpass","-a","guest:guestpass","-v","/data::r,guest:rwmda,admin","--http=0.0.0.0:3923"]
