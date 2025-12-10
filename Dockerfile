@@ -21,4 +21,4 @@ RUN pip install --no-cache-dir --user .
 EXPOSE 3923 3924
 
 # Run copyparty
-ENTRYPOINT ["python", "-m", "copyparty"]
+ENTRYPOINT ["python", "-m", "copyparty", "--http=0.0.0.0:3923"]
