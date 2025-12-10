@@ -18,7 +18,7 @@ USER appuser
 RUN pip install --no-cache-dir --user .
 
 # Expose default ports
-EXPOSE 3923 3924
+EXPOSE 3923
 
 # Run copyparty
-ENTRYPOINT ["python", "-m", "copyparty", "--http=0.0.0.0:3923"]
+ENTRYPOINT ["python", "-m", "copyparty"]
