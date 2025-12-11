@@ -11,9 +11,8 @@ RUN apt-get update && \
 RUN useradd -m appuser
 WORKDIR /app
 COPY copyparty-sfx.py config.conf ./
-COPY ./data/ ./data/
 RUN chown -R appuser:appuser /app
-RUN mkdir -p /app/data/music /app/data/inc/sharex
+RUN mkdir -p /app/data /app/data/music /app/data/inc/sharex
 RUN chmod 775 -R /app/data
 
 # Switch to appuser
