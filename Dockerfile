@@ -12,6 +12,7 @@ RUN useradd -m appuser
 WORKDIR /app
 COPY . .
 RUN chown -R appuser:appuser /app
+RUN mkdir /app/data
 
 # Install Python dependencies
 USER appuser
