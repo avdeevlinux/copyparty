@@ -10,7 +10,7 @@ RUN apt-get update && \
 # Create non-root user
 RUN useradd -m appuser
 WORKDIR /app
-COPY copyparty-sfx.py config.conf ./
+COPY copyparty-sfx.py config.conf ./data ./
 COPY data/ ./data/
 RUN chown -R appuser:appuser /app
 RUN mkdir -p /app/data/music /app/data/inc/sharex
