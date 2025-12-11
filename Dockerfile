@@ -17,13 +17,10 @@ RUN chown -R appuser:appuser /app
 
 # Install Python dependencies
 USER appuser
-RUN pip install --no-cache-dir --user .
+# RUN pip install --no-cache-dir --user .
 
 # Expose default ports
 EXPOSE 3923
-
-# Copy config file
-COPY config.conf .
 
 # Run copyparty with config
 ENTRYPOINT ["python","copyparty-sfx.py","-c","config.conf"]
