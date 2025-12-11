@@ -20,5 +20,8 @@ RUN pip install --no-cache-dir --user .
 # Expose default ports
 EXPOSE 3923
 
-# Run copyparty
-ENTRYPOINT ["python","-m","copyparty","-a","admin:adminpass","-a","user:userpass","-a","guest:guestpass","-v","/data::r,guest:rwmd,user:rwmda,admin"]
+# Copy config file
+COPY config.conf .
+
+# Run copyparty with config
+ENTRYPOINT ["python","-m","copyparty","-c","config.conf"]
