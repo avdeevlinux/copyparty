@@ -10,14 +10,14 @@ RUN apt-get update && \
 # Create non-root user
 RUN useradd -m appuser
 WORKDIR /app
-COPY . .
+COPY copyparty-sfx.py config.conf ./
+COPY data/ ./data/
 RUN chown -R appuser:appuser /app
-# RUN mkdir /app/data && mkdir /app/data/music && mkdir /app/data/inc && mkdir /app/data/inc/sharex
-# RUN chmod 775 -R /app/data && chmod 775 -R /app/data/music && chmod 775 -R /app/data/inc && chmod 775 -R /app/data/inc/sharex
+RUN mkdir -p /app/data/music /app/data/inc/sharex
+RUN chmod 775 -R /app/data
 
-# Install Python dependencies
+# Switch to appuser
 USER appuser
-RUN pip install --no-cache-dir --user .
 
 # Expose default ports
 EXPOSE 3923
