@@ -12,8 +12,8 @@ RUN useradd -m appuser
 WORKDIR /app
 COPY . .
 RUN chown -R appuser:appuser /app
-RUN mkdir /app/data && mkdir /app/data/music && mkdir /app/data/inc && mkdir /app/data/inc/sharex
-RUN chmod 775 -R /app/data && chmod 775 -R /app/data/music && chmod 775 -R /app/data/inc && chmod 775 -R /app/data/inc/sharex
+# RUN mkdir /app/data && mkdir /app/data/music && mkdir /app/data/inc && mkdir /app/data/inc/sharex
+# RUN chmod 775 -R /app/data && chmod 775 -R /app/data/music && chmod 775 -R /app/data/inc && chmod 775 -R /app/data/inc/sharex
 
 # Install Python dependencies
 USER appuser
