@@ -12,7 +12,7 @@ RUN useradd -m appuser
 WORKDIR /app
 COPY . .
 RUN chown -R appuser:appuser /app
-RUN mkdir /app/data
+RUN mkdir /app/data && mkdir /app/data/music && mkdir /app/data/inc && mkdir /app/data/inc/sharex
 
 # Install Python dependencies
 USER appuser
