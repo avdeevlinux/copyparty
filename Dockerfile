@@ -24,4 +24,4 @@ EXPOSE 3923
 COPY config.conf .
 
 # Run copyparty with config
-ENTRYPOINT ["python","-m","copyparty","-c","config.conf","-v","/data"]
+ENTRYPOINT ["python","-m","copyparty","-c","config.conf","-v","/data::r,guest:rwmd,user:rwmda,admin"]
