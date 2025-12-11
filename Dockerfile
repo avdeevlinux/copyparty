@@ -26,4 +26,4 @@ EXPOSE 3923
 COPY config.conf .
 
 # Run copyparty with config
-ENTRYPOINT ["python","-m","copyparty","-c","config.conf"]
+ENTRYPOINT ["python","setup.py","-m","copyparty","-c","config.conf"]
