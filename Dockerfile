@@ -7,16 +7,17 @@ RUN apt-get update && \
     gcc python3-dev libffi-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# Create non-root user
-RUN useradd -m appuser
 WORKDIR /app
 COPY copyparty-sfx.py config.conf ./
-RUN chown -R appuser:appuser /app
-RUN mkdir -p /app/data /app/data/music /app/data/inc/sharex
-RUN chmod 775 -R /app/data
+
+# Create non-root user
+# RUN useradd -m appuser
+# RUN chown -R appuser:appuser /app
+# RUN mkdir -p /app/data /app/data/music /app/data/inc/sharex
+# RUN chmod 775 -R /app/data
 
 # Switch to appuser
-USER appuser
+# USER appuser
 
 # Expose default ports
 EXPOSE 3923
