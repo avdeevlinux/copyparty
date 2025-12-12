@@ -11,7 +11,7 @@ WORKDIR /app
 COPY copyparty-sfx.py config.conf ./
 
 # Create non-root user
-RUN useradd -m appuser
+RUN useradd -m -u 1000 appuser
 RUN chown -R appuser:appuser /app
 RUN mkdir -p /app/data/uploads
 RUN chown -R appuser:appuser /app/data
