@@ -16,9 +16,13 @@ RUN chown -R appuser:appuser /app
 RUN mkdir -p /app/data/uploads
 RUN chown -R appuser:appuser /app/data
 
+# Create and set permissions for /dump
+RUN mkdir -p /dump && \
+    chown -R appuser:appuser /dump && \
+    chmod -R 777 /dump
+
 # Switch to appuser
 USER appuser
-RUN chmod -R 777 /app
 
 # Expose default ports
 EXPOSE 3923
