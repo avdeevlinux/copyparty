@@ -16,10 +16,11 @@ RUN chown -R appuser:appuser /app
 RUN mkdir -p /app/data/uploads
 RUN chown -R appuser:appuser /app/data
 
-# Create and set permissions for /dump
-RUN mkdir -p /dump && \
-    chown -R appuser:appuser /dump && \
-    chmod -R 777 /dump
+# Create /app/data/uploads and symlink /dump to it
+RUN mkdir -p /app/data/uploads && \
+    ln -s /app/data/uploads /dump && \
+    chown -R appuser:appuser /app/data/uploads && \
+    chmod -R 777 /app/data/uploads
 
 # Switch to appuser
 USER appuser
