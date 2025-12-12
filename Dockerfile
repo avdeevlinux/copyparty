@@ -14,7 +14,7 @@ COPY copyparty-sfx.py config.conf ./
 RUN useradd -m appuser
 RUN chown -R appuser:appuser /app
 RUN mkdir -p /app/data/uploads
-RUN chmod 775 -R /app/data
+RUN chown -R appuser:appuser /app/data
 
 # Switch to appuser
 USER appuser
