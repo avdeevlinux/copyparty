@@ -24,4 +24,4 @@ USER appuser
 EXPOSE 3923
 
 # Run copyparty with config
-ENTRYPOINT ["python","copyparty-sfx.py","-c","config.conf"]
+ENTRYPOINT ["python","copyparty-sfx.py","-c","config.conf","-v","$(pwd)/data/uploads:/app/data/uploads"]
