@@ -11,13 +11,13 @@ WORKDIR /app
 COPY copyparty-sfx.py config.conf ./
 
 # Create non-root user
-# RUN useradd -m appuser
-# RUN chown -R appuser:appuser /app
-# RUN mkdir -p /app/data /app/data/music /app/data/inc/sharex
-# RUN chmod 775 -R /app/data
+RUN useradd -m appuser
+RUN chown -R appuser:appuser /app
+RUN mkdir -p /app/data/uploads
+RUN chmod 775 -R /app/data
 
 # Switch to appuser
-# USER appuser
+USER appuser
 
 # Expose default ports
 EXPOSE 3923
