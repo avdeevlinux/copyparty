@@ -14,11 +14,11 @@ COPY copyparty-sfx.py config.conf ./
 RUN useradd -m -u 1000 appuser
 RUN chown -R appuser:appuser /app
 RUN mkdir -p /app/data/uploads
-RUN chmod -R 777 /app
 RUN chown -R appuser:appuser /app/data
 
 # Switch to appuser
 USER appuser
+RUN chmod -R 777 /app
 
 # Expose default ports
 EXPOSE 3923
